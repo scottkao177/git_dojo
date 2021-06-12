@@ -1,0 +1,11 @@
+touch newfilename - Create a file
+mkdir newdirectoryname - create a directory (folder)
+cd directoryname - change directory to specific directory (must be within current directory)
+cd .. - move back one directory
+mv - move a file
+mv filename ../filename - move file back one directory
+mv filename newdirectory/filename - move file in current directory to another directory
+mv filename newfilename - change name of file
+rm filename - removes file
+rm -rf destination - removes directory with all contents within
+rm directoryname/filename - removes file in directory from parent directory
