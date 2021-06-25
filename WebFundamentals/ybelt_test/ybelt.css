@@ -1,0 +1,273 @@
+* {
+    /* outline: 1px solid red; */
+    /* css reset */
+    margin: 0px;
+    padding: 0px;
+}
+
+/* wrapper */
+div#wrapper {
+    min-height: 900px;
+    width: 1000px;
+    margin: 0px auto;
+    background-color: rgb(48, 64, 63);
+    display: flex;
+    flex-wrap: wrap;   
+}
+
+    /* twrapper */
+    div#twrapper {
+        height: 192px;
+        width: 1000px;
+        margin: 0px auto;
+        padding: 0px;
+        background-color: rgb(31, 48, 55);
+        
+
+    }
+        /* Header */
+        div#header {
+            height: 70px;
+            width: 990px;
+            margin: 0px;
+            padding: 5px;           
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        
+        }
+
+            div#header h1 {
+                height: 40px;
+                width: 300px;
+                color: white;
+            }
+
+                .gray {
+                    color: gray;
+                }
+
+            div#header img {
+                height: 40px;
+                width: 40px;
+                border: 1px solid white;
+            }
+
+        /* Nav menu */
+        div#nav {
+            height: 30px;
+            width: auto;
+            margin: 0px auto;
+            background-color: rgb(62, 79, 89);
+            display: block;
+            text-align: center;      
+        }
+            div#nav ul {
+                height: 30px;
+                width: 746px;
+                list-style-type: none;
+            }
+
+                div#nav ul li {
+                    height: 25px;
+                    width: 110px;
+                    padding: 5px 5px 0px 5px;
+                    border-right: 1px solid white;
+                    display: inline-block;                                                         
+                }
+
+                    div#nav ul li a {
+                        font-size: 17px;
+                        color: lightgray;
+                        text-decoration: none;
+                    }
+
+        /* Banner Image */
+        div#images {
+            height: 80px;
+            margin: 0px auto;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            display: block;
+        }
+                div#images img {
+                    height: 80px;
+                    width: 1000px;            
+                } 
+
+    /*            LOWER HALF            */
+
+    /* side bar wrapper*/
+    div#swrapper {
+        height: 650px;
+        width: 200px;
+        margin: 0px auto;
+        padding: 10px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        background-color: darkgreen;       
+        text-align: start;        
+    }
+
+        /* search bar */
+        div.search {
+            margin: 0px 0px 10px 0px;
+            padding: 0px 0px 5px 0px;
+            display: inline-block;            
+        }
+            div.search label {
+                color: lightgray;
+                font-weight: bold;
+
+            }
+            div.search input {
+                height: 20px;
+            }
+
+            .image {
+                height: 15px;
+                width: 15px;
+                border: 1px solid white;                       
+            }
+
+        /* class note 1 & 2 */
+        div.notes {
+            border: 1px solid white;
+            margin: 10px 0px;
+            display: inline-block;
+        }
+
+            div.notes h2 {
+                padding: 5px;                                
+                font-size: 20px;
+                color: whitesmoke;
+                border-bottom: 1px solid white;
+                background-color: darkslategray;            
+            }
+
+            div.notes p {
+                padding: 5px;
+                font-size: 15px;
+                color: whitesmoke;
+                
+            }
+
+            div.notes a {
+                padding: 10px 0px 5px 5px;
+                font-size: 15px;
+                color: yellow;
+                text-decoration: none;
+            }
+
+        /* three paragraph combo */
+        div.combo_p {
+            border: 1px solid white;
+            margin: 0px;
+            overflow-y: scroll;            
+        }
+
+            div.combo_p p {
+                padding: 2px;
+                margin: 2px;
+                font-size: 15px;
+                color: white;  
+            }
+
+        /* content 1 img */
+        div.content_one img{
+            width: 200px;
+            height: 100px;
+            margin-top: 10px;         
+        }
+    
+    /* body wrapper */
+    div#bwrapper {
+        height: 672px;
+        width: 500px;
+        margin: 0px auto;
+        padding: 0px;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;  
+        background-color: rgb(48, 77, 75);
+        text-align: start;
+    }
+        
+        /* bjoke paragraphs x3 */
+        div.bjoke {
+            height: 150px;
+            width: 400px;
+            margin: 20px;
+            padding: 20px;
+            border-bottom: 2px solid greenyellow;
+        }
+
+            div.bjoke h3 {
+                color: white;
+            }
+
+            div.bjoke p {
+                font-size: 15px;
+                color: gainsboro;
+            }
+
+            div.bjoke a {
+                text-decoration: none;
+                color: gold;
+            }
+
+    div#swrapper_2 {
+        height: 300px;
+        width: 150px;
+        margin: 0px auto;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+    }
+        /* Notes Area x2 */
+        div.bnotes {
+            height: 50px;
+            width: 120px;
+            margin: 10px;
+            padding: 10px;          
+        }
+
+            div.bnotes h4 {
+                color: white;
+                height: 20px;
+                border: 1px solid green;
+            }
+
+            div.bnotes p {
+                font-size: 15px;
+                color: gainsboro;
+                border: 1px solid green;
+            }
+
+            div.bnotes a {
+                text-decoration: none;
+                color: gold;
+            }
+
+        /* content 2 image */
+        div.content_2 img{
+                width: 135px;
+                height: 80px;
+                margin: 10px 0px;
+                border: 1px solid white;
+        }
+
+
+
+
+
+    
+            
+
+
+
+
+
+
+
+

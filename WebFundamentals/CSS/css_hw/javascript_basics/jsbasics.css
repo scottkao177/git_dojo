@@ -1,0 +1,138 @@
+/* css reset + css reset*/
+* {
+    margin: 0px
+    padding: 0px;
+    outline: 1px dotted red; }
+}
+
+/* dark blue block */
+#container {
+    margin: 0px auto;
+    width: 970px;
+    background-color: rgb(18, 53, 91);
+}
+
+/* red block */
+#header {
+    margin: 10px 10px 15px 10px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 930px;
+    min-height: 50px;
+    background-color: red;
+    display: inline-block;
+    vertical-align: top;
+}
+
+h1 {
+    font-style: bold;
+    font-size: 40px;
+    color: rgb(191, 215, 234);
+}
+
+/* teal block */
+#nav {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 200px;
+    min-height: 250px;
+    background-color: rgb(8, 126, 139);
+    display: inline-block;
+    vertical-align: top;
+}
+
+#nav ul li::before {
+    content: "\2022";
+    color: white;
+}
+
+.home {
+    font-size: 20px;
+    color: rgb(82, 219, 214);
+    text-decoration: underline;
+    margin-left: -20px;
+    list-style: none;
+}
+
+.wbullet {
+    font-size: 15px;
+    color: rgb(82, 219, 214);
+    text-decoration: underline;
+    list-style: none;
+}
+
+.minor {
+    font-size: 15px;
+    color: rgb(82, 219, 214);
+    text-decoration: underline;
+    margin-left: 20px;
+    list-style: none;
+}
+
+/* black box */
+#content {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 685px;
+    min-height: 500px;
+    background-color: rgb(12, 24, 33);
+    display: inline-block;
+    vertical-align: top;
+}
+
+h3 {
+    font-size: 20px;
+    color: rgb(191, 215, 234);
+}
+
+p {
+    font-size: 15px;
+    color: rgb(191, 215, 234);
+    margin-top: -10px;
+ }
+
+#content ul {
+    font-size: 15px;
+    color: rgb(191, 215, 234);
+    margin-left: -15px;
+}
+
+.intro {
+    color: rgb(82, 219, 214);
+    margin-left: 4px;
+}
+
+.end {
+    color: rgb(55, 115, 248);
+}
+
+/* grey box */
+#info {
+    margin: 10px;
+    padding: 10px;
+    width: 930px;
+    border-radius: 10px;
+    min-height: 25px;
+    background-color: rgb(92, 102, 114);
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+h4 {
+    color: rgb(191, 215, 234);
+}
+
+.script {
+    color: rgb(82, 219, 214);
+}
+
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+<img src="pic.jpg" alt="Picture">

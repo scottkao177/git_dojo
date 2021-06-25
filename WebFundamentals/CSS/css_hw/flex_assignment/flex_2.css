@@ -1,0 +1,41 @@
+@font-face {
+    font-family: montserrat;
+    src: url("montserrat.ttf") format("truetype");
+}
+
+body {
+    font-family: montserrat;
+}
+
+.nav {
+    width: 1000px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: hsl(219, 79%, 66%);
+    overflow: hidden;
+}
+
+img {
+    margin: 2% 0% 2% 2%;
+    width: 10%;
+}
+
+ul {
+    display: flex;
+    padding-left: 28%;
+    justify-content: space-evenly;
+}
+
+li {
+    display: flex;
+    align-items: flex-end;
+    margin: 0% 10%;
+}
+
+a, h1 {
+    text-decoration: none;
+    color: white;
+    white-space: nowrap;
+}

@@ -1,0 +1,14 @@
+/* part 1 */
+.center-box {
+    display: flex;
+    width: auto;
+    min-height: 200px;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+}
+.center-item {
+    display: flex;
+    padding: 40px;
+    background-color: beige;
+}

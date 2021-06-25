@@ -1,0 +1,89 @@
+html tips & tricks notes
+Start of with (type in)!  = see & paste emmet abbreviation for standard html format
+(Example of standard structure)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+</html>
+
+ctrl + c or (type in) <!-- Comments -->  = add comment (for developers to see reasoning behind code)
+(type in)lorem + (press)tab = display lorem ispum default text (used as dummy text for paragraphs usually)
+
+Create a image
+<img id="nameofimage" src="imagesource" alt="description incase viewer cannot view image">
+
+Create Audio
+<audio src="music_src_link" insert>
+</audio>
+
+additional commands: replace insert text with the following
+autoplay - automatically play when viewer comes in
+autoplay loop - auto play and loop after
+controls - give viewer control options (pause/play)
+leave blank (delete the word insert) - standard audio code
+
+Create Video
+<video src="caddyshack.mp4" width="400" height="800" controls>
+</video>
+Create a link
+<a href="link">text description</a> =  link with description
+<a href="link" target="_blank">text description</a> = link with description + opens in new tab
+
+Create a list
+<ul></ul> = add a bullet point unordered list (remember to add <li></li> for each list item)
+<ol></ul> = add a numbered ordered list (remember to add <li></li> for each list item)
+
+Create a table
+<table></table> = Standard table structure (filled with below)
+<thead></thead> = table header (fill with <tr> <th></th> </tr>)
+<tr></tr> = table row
+<th></th>= table head info
+<tbody></tbody> = table body  (fill with <tr> <td></td> </tr>)
+<tr></tr> = table row
+<td></td> =  table detail (use td for tbody!)
+
+Create a form
+example of first name
+<label for="first_name">First Name:</label>
+<input type="text" id="first_name" name="first_name">
+
+example of password
+<label for="password">Password:</label>
+<input type="password" id="password" name="password">
+
+example of email
+<label for="email">Email:</label>
+<input type="email" id="email" name="email">
+
+Create choose 1 option  (input type = radio) / choose mutiple option (input type=checkbox)
+<label for="male">Male</label>
+<input type="radio/checkbox" id="male" name="gender" value="male">
+<label for="female">Female</label>
+<input type="radio/checkbox" id="female" name="gender" value="female">
+<label for="decline">Prefer not to say</label>
+<input type="radio/checkbox" id="decline" name="gender" value="decline">
+
+Create choose 1 option only with dropdown menu
+<select name="gender">
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+    <option value="decline">Prefer not to say</option>
+</select>
+
+<textarea name="description"></textarea> = for description box for viewer to type into. (used for longer needed responses)
+<input type="hidden" name="id" value="7"> = used for back-end authentication
+<input type="submit" value="submit"> = submit button
+
+Customizations
+<div></div> creates a structure for specific line (all code will be displayed on web on this line)
+<br> = creates seperation space
+<hr> creates a visual line
+<strong></strong> = bold text
+<em></em>= italic text
