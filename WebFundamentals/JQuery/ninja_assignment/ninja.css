@@ -1,0 +1,47 @@
+* {
+    /* outline: 1px solid red; */
+    margin: 0%;
+    padding: 0%;
+}
+
+div#page_container {
+    margin: 0% auto;
+    padding: 1%;
+    width: 100%;
+    height: 100%;
+    background-color: burlywood;
+}
+
+h1 {
+    margin: 0% auto;
+    width: 40%;
+    height: 25%;
+    border-bottom: 0.1em solid black;
+}
+
+div#container {
+    margin: 0% auto; 
+    width: 80%;
+    height: 80%;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+img {
+    margin: 0% auto;
+    padding: 0%;
+    border: 1px solid black;
+    width: 20%;
+    height: 20%;
+}
+
+button {
+    margin: 0% auto;
+    padding: 2% 39%;
+    background-color: yellow;
+    font-weight: bold;
+    font-size: 14px;
+    border: 2px solid black;
+}
+
+{ }
