@@ -1,0 +1,32 @@
+* {
+    margin: 0px auto;
+    padding: 0px;
+}
+
+body {
+    font-size: 15pt;
+}
+
+#container {
+    margin: 0px auto;
+    padding: 0px;
+    width: 1000px;
+    height: 1000px;
+    display: inline-block;
+}
+
+#header {
+    text-decoration: underline;
+}
+
+.box {
+    margin: 0px auto;
+    padding: 5px;
+}
+
+.size {
+    margin: 0px auto;
+    padding: 5px;
+    width: 200px;
+    height: 150px;
+}

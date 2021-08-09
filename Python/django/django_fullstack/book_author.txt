@@ -1,0 +1,64 @@
+Query create 5 books:
+c_sharp = Book.objects.create(title="C Sharp")
+java = Book.objects.create(title="Java")
+python = Book.objects.create(title="Python")
+php = Book.objects.create(title="PHP")
+ruby = Book.objects.create(title="Ruby")
+
+Query create 5 Authors:
+bob_saget = Author.objects.create(first_name="Bob", last_name="Saget")
+kim_possible = Author.objects.create(first_name="Kim", last_name="Possible")
+elliot_robot = Author.objects.create(first_name="Elliot", last_name="Robot")
+zed_steel = Author.objects.create(first_name="Zed", last_name="Steel")
+rocky_balboa = Author.objects.create(first_name="Rocky", last_name="Balboa")
+
+Query change name of C sharp
+c = Book.objects.get(id=1)
+c.title="C#"
+c.save()
+
+Query delete book
+c = Book.objects.get(id=6)
+c.delete()
+
+Query change the first name of 4th author to Bill
+c = Author.objects.get(id=4)
+c.first_name="Bill"
+c.save()
+
+Query assign the first author to the first 2 books
+bob_saget.books.add(c_sharp)
+bob_saget.books.add(java)
+
+Query assign the second author to the first 3 books
+kim_possible.books.add(c_sharp)
+kim_possible.books.add(java)
+kim_possible.books.add(python)
+
+Query assign the third author to the first 4 books
+elliot_robot.books.add(c_sharp)
+elliot_robot.books.add(java)
+elliot_robot.books.add(python)
+elliot_robot.books.add(php)
+
+Query assign the third author to the all 5
+zed_steel.books.add(c_sharp)
+zed_steel.books.add(java)
+zed_steel.books.add(python)
+zed_steel.books.add(php)
+zed_steel.books.add(ruby)
+
+Query show all authors for 3rd book
+python.authors.all()
+
+Query Remove the 1st author of the 3rd book
+python.authors.remove(kim_possible)
+
+Query Add the 5th author to the 2nd book
+java.authors.add(rocky_balboa)
+
+Query Get all books of the third author 
+>>> elliot_robot.books.all()
+
+Query Find all authors of the fifth book
+>>> ruby.authors.all()

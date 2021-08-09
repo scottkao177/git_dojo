@@ -1,0 +1,75 @@
+#1
+Prediction: 0,1,2
+Answer: 1,2,3,4,5,6,7,8,9
+Analysis: in a range() function with (x,y,z) numbers. first number(x) is printed, must be less than y, increments (z).
+
+#2
+Prediction: 1,4,7
+Answer: 1,4,7
+
+#3
+Prediction: 0,1,2,3,4
+Answer: 0,1,2,3,4
+Analysis: 3 fits both conditions: [if y > 5] & [elif y == 3] but [if y > 5] comes first. Therefore is the condition printed.
+
+#4 
+Prediction: 20, 17, 14, 11, 8, 5, 2
+Answer: 20, 17, 14, 11, 8, 5, 2
+
+#5 
+Prediction: error
+Answer: London, Paris, Tokyo
+Analysis: for "city"(can be any name as long it matches inside print function) to list all values in cities.
+
+#6 
+Prediction:
+0
+1
+2
+3
+7
+13
+8
+42
+The answer to life, the universe, and everthing.
+
+Answer: 
+0
+7
+1
+13
+2
+8
+3
+42
+The answer to life, the universe, and everthing.
+
+analysis: Python will go down the list of all prints before going back to the for loop (note: no elif or else statements).
+
+#7 
+Prediction: Hello, 1, Hello, 3, Hello, 5, Hello, 7, Hello, 9
+Answer: Hello, 1, Hello, 3, Hello, 5, Hello, 7, Hello, 9
+
+#8 
+Prediction: Hello, 1, World, 3, Hello, 5, World, 7, Hello, 9
+Answer: Hello, 1, World, 3, Hello, 5, World, 7, Hello, 9
+
+#9 
+Prediction: name, fido, age, 4, trick, rolls over
+Answer: error
+Analysis: incorrect indentation causing error
+
+#10 
+Prediction:
+First, I will use the 20 minute rule and use the platform and other resources to find my answer
+Second, I will ask my classmates for help, like how I would ask a fellow employee at my job
+Third, I will ask an available TA in a public setting, so everyone can benefit from my question
+Fourth, I will ask an available instructor
+
+Answer: 
+First, I will use the 20 minute rule and use the platform and other resources to find my answer
+Second, I will ask my classmates for help, like how I would ask a fellow employee at my job
+Third, I will ask an available TA in a public setting, so everyone can benefit from my question
+Fourth, I will ask an available instructor
+
+Note: requires .items() when printing key , value.

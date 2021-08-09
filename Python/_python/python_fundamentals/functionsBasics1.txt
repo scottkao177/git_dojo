@@ -1,0 +1,139 @@
+#1
+Prediction: 
+5
+
+#2
+Prediction: 
+10
+
+#3
+Prediction:
+5
+10
+
+answer: 
+5
+
+analysis: 
+Python will return the first in the list only.
+
+#4
+Prediction: 
+5
+
+#5
+Prediction: 
+5
+
+answer:
+5
+none
+
+analysis: 
+x is not defined correctly
+
+#6
+Prediction: 
+3
+5
+
+answer:
+3
+5
+
+#7
+Prediction: 25
+
+analysis: 
+Because b and c are defined as strings, therefore the numbers are put together instead of addition.
+
+#8
+Prediction:
+100
+10
+7
+
+answer:
+error
+7
+
+analysis:
+print(b) is an error due to the function having no variable defined as b.
+else should only have one return statement and return 7 is indented incorrectly.
+
+#9
+Prediction:
+7
+14
+21
+
+analysis:
+return 3 is indented incorrectly
+if indented correctly will still be null due to return 14 taking priority.
+
+
+#10
+Prediction:
+8
+
+#11
+Prediction:
+500 
+error
+
+answer:
+500
+500
+300
+500
+
+analysis:
+b = 500
+print (b)
+creates the first line 500
+
+def a():
+    b = 300
+    print (b)
+This is only defining the a function and creating the task but hasn't been called yet.
+
+print (b) creates the second line 500 because it it's indentation isnt within the function.
+
+a() calls the function therefore the third line is 300.
+
+print (b) creates the fouth line 500 (same reason as line two).
+
+#12
+Prediction:
+500
+500
+300
+500
+
+#13
+Prediction:
+500
+500
+300
+300
+
+#14
+Prediction:
+1
+3
+2
+
+analysis:
+call upon the function a() at the bottom of the code
+line #1 is 1 because print(1) was within a()
+line#2 is 3 because of b() was within a() and is correctly defined later down the line.
+line #3 is 2 because print(2) was within a()
+
+#15
+Prediction:
+1
+3
+5
+10
+
+

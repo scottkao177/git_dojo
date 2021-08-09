@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ninja: Path to Riches</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/ninja.css' %}">
+        <script defer src="{% static 'js/ninja.js' %}"></script>
+    </head>
+
+    <body>
+        <!-- container (everything will be wrapped within this) -->
+        <div id = "container">
+
+            <!-- title + tutorial(pop_up header & pop_up body) + overlay container -->
+            <div id = "header">
+                <h1>Ninja: Path to Riches</h1>
+                <!-- pop-up tutorial button -->
+                <button data-tutorial-target = "#tutorial" class = "info" >How to play</button>
+
+                <!-- Tutorial pop-up container -->
+                <div class = "tutorial" id = "tutorial">
+                    <div id ="pop_header">
+                        <h2>How to play:</h2>
+                        <!-- close button with &times; icon -->
+                        <button data-close-button class = "close-button">&times;</button>
+                    </div>
+
+                    <!-- goal & options -->
+                    <div id="pop_body">
+                    <p>Goal: Reach 50 gold without losing more than 50g!</p>
+                    <br>
+                    <h3>Pick and choose 4 different paths:</h3>
+                    <ul>
+                        <li>Duelist(Duel) - Gain up to 5 gold or lose up to 5 gold.</li>
+                        <li>Adventurer(Quest) - Gain up to 20 gold or lose up to 20 gold.</li>
+                        <li>Gambler(Bakuto) - small bet(costs 5g): can win up to 20g, medium bet(costs 10g): win up to 30g, large bet(costs 20g): win up to 50g.</li>
+                        <li>Raider(Raid) - chance to gain up to 50 gold or lose up to 50 gold.</li>
+                    </ul>
+                    </div>
+                </div>
+                <!-- overlay container (creates gray background around pop-up tutorial) -->
+                <div id = "overlay"></div>
+            </div>
+
+            <!-- Resource Wrapper -->
+            <div id = "resources">
+                <h2>Resources:</h2>
+                <p>Gold: </p>
+                <p>Gold spent: </p>
+            </div>
+
+            <!-- Paths wrapper -->
+            <div id = "path_wrap">
+                
+                <!-- duel -->
+                <div class = "option">
+                    <form action="/outcome" method="post">
+                        {% csrf_token %}
+                        <div class = "option_info">
+                            <h2>Duel:</h2>
+                            <p>Take the path of duelist and challenge warriors of legend across the land of Japan!</p>
+                        </div>
+                        <button class = "option_click">Challenge!</button>
+                    </form>
+                </div>
+
+                <!-- quest -->
+                <div class = "option">
+                    <div class = "option_info">
+                        <h2>Quest:</h2>
+                        <p>Take on quests at night as an adventurer and earn rewards!</p>
+                    </div>
+                    <button class = "option_click">Accept Quest!</button>
+                </div>
+
+                <!-- bakuto -->
+                <div class = "option">
+                    <div class = "option_info">
+                        <h2>Bakuto:</h2>
+                        <p>Feeling lucky? Gamble your way to the top of the Shogunate Era!</p>
+                    </div>
+                    <div id = "bet">
+                        <button class = "option_click">Small bet! <br>(5g cost)</button>
+                        <button class = "option_click">Medium bet! <br>(10g cost)</button>
+                        <button class = "option_click">Large bet! <br>(20g cost)</button>
+                    </div>
+                </div>
+
+                <!-- raid -->
+                <div class = "option">
+                    <div class = "option_info">
+                        <h2>Raid:</h2>
+                        <p>Test your ninja skills and raid the rich of Japan! Those pesky warlords need to share their wealth anyways.</p>
+                    </div>
+                    <button class = "option_click">Steal from the rich!</button>
+                </div>
+            </div>
+
+            <!-- outcome/history display -->
+            <div id = "outcome">
+                <h3>History:</h3>
+                <div class = "update"></div>
+            </div>
+
+        </div>
+    </body>
+</html>

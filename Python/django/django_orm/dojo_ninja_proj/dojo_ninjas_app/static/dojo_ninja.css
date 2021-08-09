@@ -1,0 +1,91 @@
+* {
+    margin: 0px auto;
+    padding: 0px;
+    box-sizing: border-box;
+    outline: 1px solid red;
+    height: 100%;
+    width: 100%;
+}
+
+#container {
+    margin: 0px auto;
+    padding: 0px;
+    height: 1080px;
+    width: 1920px;
+    /* min-width: 100%; */
+
+}
+
+#add_dojo_ninja {
+    margin: 0px auto;
+    padding: 5px;
+    border-bottom: 3px solid black;
+    height: 40%;
+    width: 90%;
+    display: flex;
+}
+
+#dojo {
+    margin: 0px auto;
+    padding: 5px;
+    height: 90%;
+    width: 45%;
+}
+
+#ninja {
+    margin: 0px auto;
+    padding: 5px;
+    height: 90%;
+    width: 45%;
+}
+
+h1 {
+    margin: 5px;
+    padding: 5px;
+    height: 12%;
+    width: 90%;
+}
+
+.info {
+    margin: 0px auto;
+    padding: 5px;
+    height: 15%;
+    width: 90%;
+}
+
+#all {
+    margin: 0px auto;
+    padding: 5px;
+    max-height: 20%;
+    max-width: 90%;
+    /* border: 1px solid black; */
+}
+
+.insert {
+    margin: 0px auto;
+    padding: 5px;
+    height: 10%;
+    width: 90%;
+    border: 1px solid black;
+}
+
+.add_btn {
+    margin: 0px auto;
+    padding: 5px;
+    height: 10%;
+    width: 20%;
+}
+
+.input_block {
+    margin: 0px auto;
+    padding: 0px;
+    height: 50%;
+    width: 50%;
+}
+
+h2 {
+    margin: 5px;
+    padding: 5px;
+    height: 10%;
+    width: 90%;
+}
