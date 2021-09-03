@@ -1,0 +1,34 @@
+#background {
+    background-color: aqua;
+}
+
+#background_2 {
+    background-color: lavenderblush;
+}
+
+#background_3 {
+    background-color: lightblue;
+}
+
+#background_4 {
+    background-color: aqua;
+}
+
+#quote_block {
+    border: 1px solid black;
+}
+
+.size {
+    font-size: 15pt;
+    font-weight: bold;
+}
+
+.size_2 {
+    padding: 2px;
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+.btn {
+    margin: 2px 5px;
+}

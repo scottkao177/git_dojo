@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard</title>
+        {% load static %}
+        <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css'
+        integrity='sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We'
+        crossorigin='anonymous'>
+        <link rel="stylesheet" href="{% static 'quote.css' %}">
+    </head>
+    <body>
+        <div class ='container'>
+            <!-- error messages -->
+            {% if messages %}
+            <ul class ='messages'>
+                {% for message in messages %}
+                    <li {% if message.tags %} class='{{ message.tags }}'{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <!-- User welcome + logout button -->
+            <div class ='container'>
+                <div class='row' id='background'>
+                    <h1 class ='col'>Welcome, {{this_user.first_name}} {{this_user.last_name}}!</h1>
+                    <a class ='btn-sm btn-warning' style="width: 5rem;" href="/logout">Logout</a>
+                </div>
+            </div>
+            <div class ='container'>
+                <!-- Quotes that aren't favorited -->
+                <h3 class = 'row' id='background_2'>Quotable Quotes</h3>
+                {% for quote in all_quotes %}
+                {% if this_user not in quote.favorited_by.all %}
+                <!-- Show edit & delete if User in session posted the quote -->
+                {% if quote.posted_by.id == request.session.user_id %}
+                <div class = 'col-sm' id = 'move'>
+                    <a class ='btn btn-secondary' href="/edit/{{quote.id}}" role="button" class="btn btn-danger">Edit</a>
+                    <a class ='btn btn-danger' href="/delete/{{quote.id}}" role="button" class="btn btn-danger">Delete</a>
+                </div>
+                {% endif %}
+                <!-- Quoter + Quote text -->
+                <div id='quote_block'>
+                    <h5>{{quote.quoter}}<h5>
+                    <p>{{quote.quote}}</p>
+                    <p>Posted by: <a href="/poster/{{quote.id}}">{{quote.posted_by.first_name}} {{quote.posted_by.last_name}}</a></p>
+                    <p><a class ='btn btn-primary' href="/favorite/{{quote.id}}">Favorite</a></p>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+                <!-- Favorite Quotes by user -->
+            <div class='container'>
+                <h3 id='background_3'>Your Favorites:</h3>
+                {% for quote in all_quotes %}
+                {% if this_user in quote.favorited_by.all %}
+                <!-- Show edit & delete if User in session posted the quote -->
+                {% if quote.posted_by.id == request.session.user_id %}
+                <div class = 'col-sm'>
+                    <a class ='btn btn-secondary' href="/edit/{{quote.id}}" role="button" class="btn btn-danger">Edit</a>
+                    <a class ='btn btn-danger' href="/delete/{{quote.id}}" role="button" class="btn btn-danger">Delete</a>
+                </div>
+                {% endif %}
+                <!-- Quoter + Quote text -->
+                <div id='quote_block'>
+                    <h5>{{quote.quoter}}<h5>
+                    <p>{{quote.quote}}</p>
+                    <p>Posted by: <a href="/poster/{{quote.id}}">{{quote.posted_by.first_name}} {{quote.posted_by.last_name}}</a></p>
+                    <p><a class ='btn btn-success' href="/unfavorite/{{quote.id}}">Unfavorite</a></p>
+                </div>
+                {% endif %}
+                {% endfor %}
+                <!-- Contribute Quote -->
+                <div class ='row'>
+                    <form action ='/add/quote' method ='post'>
+                        {% csrf_token %}
+                        <legend id='background_4' class='size_2' >Contribute a Quote:</legend>
+                        <div class ='row'>
+                            <label class ='col-2' for ='quoter'>Quoted by:</label>
+                            <input class ='col-3' type ='text' name ='quoter' id ='quoter'>
+                        </div>
+                        <div class ='row'>
+                            <label class='col-2' for='quote'>Quote:</label>
+                            <textarea class='col-3' type='text' name='quote' id='quote'>Add message</textarea>
+                        </div>
+                        <div class ='col text-left'>
+                            <button type='submit' class='btn btn-lg btn-primary' value='Add Quote'>Submit!</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

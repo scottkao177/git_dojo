@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Success Confirmation Page</title>
+        {% load static %}
+        <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css'
+        integrity='sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We'
+        crossorigin='anonymous'>
+        <link rel="stylesheet" href="{% static 'quote.css' %}">
+    </head>
+    <body>
+        <div class='container'>
+            {% if messages %}
+            <ul class='messages'>
+                {% for message in messages %}
+                    <li {% if message.tags %} class='{{ message.tags }}'{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <h1>Success!</h1>
+            <div class='col'>
+                <p>Welcome, {{this_user.first_name}} {{this_user.last_name}}!</p>
+                <p>Remember {{this_user.email}}, this will be your login username.</p>
+                <p>Please logout and login!</p>
+            </div>
+            <div>
+                <a class ='btn btn-warning' style="width: 5rem;" href="/logout">Logout</a>
+            </div>
+        </div>
+    </body>
+</html>

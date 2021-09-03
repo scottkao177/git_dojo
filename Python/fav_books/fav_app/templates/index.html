@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        {% load static %}
+        <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css'
+        integrity='sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We'
+        crossorigin='anonymous'>
+        <link rel="stylesheet" href="{% static 'fav.css' %}">
+    </head>
+    <body>
+        <div class='container'>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <!-- this form is for registeration -->
+            <form action='/register' method='post'>
+            {% csrf_token %}
+                <legend>Registration</legend>
+                <div class='row'>
+                    <label class='col-1' for='first_name'>First Name:</label>
+                    <input class='col-3' type='text' name='first_name' id='first_name'>
+                </div>
+                <div class='row'>
+                    <label class='col-1' for='last_name'>Last Name:</label>
+                    <input class='col-3' type='text' name='last_name' id='last_name'>
+                </div>
+                <div class='row'>
+                    <label class='col-1' for='email'>Email:</label>
+                    <input class='col-3' type='text' name='email' id='email'>
+                </div>
+                <div class='row'>
+                    <label class='col-1' for='pw'>Password:</label>
+                    <input class='col-3' type='password' name='pw' id='pw'>
+                </div>
+                <div class='row'>
+                    <label class='col-1' for='con_pw'>Confirm Password:</label>
+                    <input class='col-3' type='password' name='con_pw' id='con_pw'>
+                </div>
+                <div class='col text-left'>
+                    <button class='btn btn-lg btn-primary' type='submit' value="Register User">Register</button>
+                </div>
+            </form>
+            <br>
+            <!-- this form is for login users -->
+            <form action='/login' method='post'>
+            {% csrf_token %}
+                <legend>Login</legend>
+                <div class='row'>
+                    <label class='col-1' for='email'>Email:</label>
+                    <input class='col-3' type='text' name='email' id='email'>
+                </div>
+                <div class='row'>
+                    <label class='col-1' for='pw'>Password:</label>
+                    <input class='col-3' type='password' name='pw' id='pw'>
+                </div>
+                <div class='col text-left'>
+                    <button type='submit' class='btn btn-lg btn-primary' value='Login User'>Login</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
+

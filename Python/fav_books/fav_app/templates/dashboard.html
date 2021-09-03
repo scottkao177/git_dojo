@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        {% load static %}
+        <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css'
+        integrity='sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We'
+        crossorigin='anonymous'>
+        <link rel="stylesheet" href="{% static 'fav.css' %}">
+    </head>
+    <body>
+        <div class='container'>
+            <!-- error messages -->
+            {% if messages %}
+            <ul class='messages'>
+                {% for message in messages %}
+                    <li {% if message.tags %} class='{{ message.tags }}'{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <!-- User welcome + logout -->
+            <h1>Build a Book Workshop</h1>
+            <div class='container-sm'>
+                <p>Welcome, {{this_user.first_name}} {{this_user.last_name}}!</p></p>
+                <p>Total books added: {{ user_books }}</p>
+                <a href="/logout">Logout</a>
+            </div>
+            <div class ='container'>
+                <!-- Add a book form -->
+                <div class = 'row'>
+                    <div class = 'col'>
+                        <form action='/add/book' method='post'>
+                            {% csrf_token %}
+                            <legend>Add a Book!</legend>
+                            <div class='row'>
+                                <label class='col-2' for='title'>Title:</label>
+                                <input class='col-3' type='text' name='title' id='title'>
+                            </div>
+                            <div class='row'>
+                                <label class='col-2' for='description'>Description:</label>
+                                <input class='col-3' type='text' name='description' id='description'>
+                            </div>
+                            <div class='col text-left'>
+                                <button type='submit' class='btn btn-lg btn-primary' value='Add Book'>Submit Book!</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- List of favorited books by user -->
+                    <div class='col'>
+                        <h3>Favorite Books:</h3>
+                        {% for book in all_books %}
+                        {% if this_user in book.favorited_by.all %}
+                        <div class='col'>
+                            <h5><a href="/current/{{book.id}}/book">{{book.title}}</a></h5>
+                            <p>(added by {{book.uploaded_by.first_name}} {{book.uploaded_by.last_name}})</p>
+                            <!-- {% if this_user in book.favorited_by.all %} -->
+                            <p><a href="/unfavorite/{{book.id}}/book">Unfavorite</a></p>
+                            <!-- {% else %}
+                            <p><a href="/unfavorite/{{book.id}}/book">Unfavorite this book</a></p>
+                            {% endif %} -->
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                        <!-- Books that aren't favorited -->
+                        <h3>Other Books:</h3>
+                        {% for book in all_books %}
+                        {% if this_user not in book.favorited_by.all %}
+                        <div class='col'>
+                            <h5><a href="/current/{{book.id}}/book">{{book.title}}</a></h5>
+                            <p>(added by {{book.uploaded_by.first_name}} {{book.uploaded_by.last_name}})</p>
+                            <p><a href="/favorite/{{book.id}}/book">Favorite this book</a></p>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

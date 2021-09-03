@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        {% load static %}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+        crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'course.css' %}">
+    </head>
+    <body>
+        <div class='container'>
+                <h2>Are you sure you want to delete the following course?</h2>
+                <div>
+                    <p>Name: {{this_course.name}}</p>
+                    <p>Description: {{this_course.description}}</p>
+                </div>
+                <div class='btn group' role='delete group' aria-label='button group to delete courses'>
+                    <a class="btn btn-primary" href="/course/{{this_course.id}}/delete" role="button">Yes! Remove this course.</a>
+                    <a class="btn btn-danger" href="/course" role="button">No! I change my mind.</a>
+                </div>
+        </div>
+    </body>
+</html>

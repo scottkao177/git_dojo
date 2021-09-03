@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        {% load static %}
+        <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css'
+        integrity='sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We'
+        crossorigin='anonymous'>
+        <link rel="stylesheet" href="{% static 'quote.css' %}">
+    </head>
+    <body>
+        <div class='container'>
+            <div class="col-sm">
+                <a class ='btn btn-info' href="/dashboard">Dashboard</a>
+                <a class ='btn btn-warning' class ='col' href="/logout">Logout</a>
+            </div>
+            <!-- message notification -->
+            {% if messages %}
+            <ul class='messages'>
+                {% for message in messages %}
+                    <li {% if message.tags %} class='{{ message.tags }}'{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <!-- Quote information if User didn't post the quote-->
+            <div class="col px-2" id='background_2'>
+                {% if quote.posted_by.id != request.session.user_id %}
+                <h3>{{quote.quoter}}</h3>
+                <p>Added by: {{quote.posted_by.first_name}} {{quote.posted_by.last_name}}</p>
+                <p>Added on: {{quote.created_date}}</p>
+                <p>Last Updated on: {{quote.updated_at}}</p>
+                <p>Quote: {{quote.quoter}}</p>
+                {% else %}
+                <!-- update quote form -->
+                <form action="/edit/{{quote.id}}/update" method="post">
+                    {% csrf_token %}
+                    <label class='size' for="quoter">Quoted By:</label>
+                    <input name="quoter" class="form-control w-50" placeholder="{{quote.quoter}}">
+                    <label class='size' for="quote">Quote:</label>
+                    <input name="quote" class="form-control w-100" placeholder="{{quote.quote}}">
+                    <div>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <a href="/dashboard" role="button" class='btn btn-secondary'>Cancel</a>
+                    <a href="/delete/{{quote.id}}" role="button" class="btn btn-danger">Delete</a>
+                    </div>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+    </body>
+</html>

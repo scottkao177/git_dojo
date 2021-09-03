@@ -1,0 +1,11 @@
+* {
+    /* outline: 1px solid red; */
+}
+label, input {
+    margin-bottom: 1rem;
+}
+
+legend {
+    font-weight: bold;
+    text-decoration: underline;
+}
