@@ -14,5 +14,5 @@ public class HelloWorld {
 // String (return type) > return "string"
 
 // Public - accessible from other classes, Static - method that is called from the class itself not from an instance, void - main() method doesn't run
-// Compile(Make it readable) class by typing in: javac filename
+// Compile(Make it readable) class by typing in: javac filename.java
 // Run in cmd by typing in: java filename
