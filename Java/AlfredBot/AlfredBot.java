@@ -63,4 +63,3 @@ public class AlfredBot {
     // NINJA BONUS
     // Write your own AlfredQuote method using any of the String methods you have learned!
 }
-
