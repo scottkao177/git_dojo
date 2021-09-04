@@ -21,7 +21,7 @@ public class AlfredBot {
     */
     public String guestGreeting(String name, String dayPeriod) {
         // YOUR CODE HERE
-        return "Good %s, %s. Lovely to see you", "dayPeriod", "name";
+        return "Hello %s, good %s. Lovely to see you";
     }
     /* 
     * Inputs: None
@@ -30,8 +30,7 @@ public class AlfredBot {
     */
     public String dateAnnouncement() {
     // YOUR CODE HERE
-        Date date = new Date();
-            return "Current date is: " + date;
+            return "Current date is: %s";
     }
     
     /*********************************************
@@ -54,6 +53,7 @@ public class AlfredBot {
     */
     public String respondBeforeAlexis(String conversation) {
         // YOUR CODE HERE
+        boolean bool = true;
         if (conversation == true) {
             return "At your service. As you wish, naturally";
         } else {
